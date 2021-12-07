@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Paises App</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="components/Header/index.js"></script>
+  <script src="components/Footer/index.js"></script>
+  <script src="components/Countries/index.js"></script>
+  <script src="components/Countries/CardCountry.js"></script>
+  <script src="components/ModalCountry/index.js"></script>
+</head>
+
+<body>
+  <comp-header></comp-header>
+  <main>
+    <div class="container">
+      <div class="sectionHeader">
+        <h2>Países</h2>
+      </div>
+      <comp-countries></comp-countries>
+    </div>
+  </main>
+  <comp-footer></comp-footer>
+  <comp-modal-country></comp-modal-country>
+
+  <script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    function valuesModal(nameCountry, oficialName, continent, urlFlag) {
+      var img = modal.firstElementChild.lastElementChild;
+      var contentTitles = modal.children[0].children[1].children;
+      var country = contentTitles[0];
+      var oficial = contentTitles[1];
+      var continentName = modal.children[0].children[2];
+      console.log(continentName, 'titles');
+
+      country.innerHTML = nameCountry;
+      oficial.innerHTML = oficialName;
+      continentName.innerHTML = `<b>Continente: </b>${continent}`;
+      img.src = urlFlag;
+
+      console.log(modal);
+      console.log(nameCountry, oficialName, continent, urlFlag, 'Values');
+      modal.style.display = "block";
+    };
+  </script>
+</body>
+
+</html>

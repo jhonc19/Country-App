@@ -1,0 +1,19 @@
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: start;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: var(--color-bg-primary);
+  align-items: center;
+}
+
+.navbar img {
+  height: 3rem;
+  padding-right: 1rem;
+}
+
+.navbar h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
